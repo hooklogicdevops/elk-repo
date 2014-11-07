@@ -104,7 +104,7 @@ cluster.name: logger
 
 # Set the number of shards (splits) of an index (5 by default):
 #
-index.number_of_shards: 5
+index.number_of_shards: 3
 
 # Set the number of replicas (additional copies) of an index (1 by default):
 #
@@ -154,15 +154,15 @@ path.conf: /etc/elasticsearch/
 # the locations (a la RAID 0) on a file level, favouring locations with most free
 # space on creation. For example:
 #
-path.data: /data/indexes
+path.data: /data
 
 # Path to temporary files:
 #
-path.work: /data/work
+path.work: work
 
 # Path to log files:
 #
-path.logs: /var/log/elasticsearch
+path.logs: /var/log
 
 # Path to where plugins are installed:
 #
@@ -183,7 +183,7 @@ plugin.mandatory: cloud-aws
 #
 # Set this property to true to lock the memory:
 #
-bootstrap.mlockall: true
+# bootstrap.mlockall: true
 
 # Make sure that the ES_MIN_MEM and ES_MAX_MEM environment variables are set
 # to the same value, and that the machine has enough memory to allocate
