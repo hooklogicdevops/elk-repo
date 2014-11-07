@@ -1,0 +1,20 @@
+{
+    "packages":{
+        "mobile-logger":{
+            "type": "autoscaling",
+            "apps": ["mobile::logger"],
+            "data": {
+                "artifact": "mobile-logger.tar.gz",
+                "bucket": "aws-mobile-logger"
+            }
+        }
+    },
+    "recipes":{
+        "default":{
+            "depends": ["artifactUpload"]
+        },
+        "artifactUpload":{
+            "actionsBeforeApp": ["mobile-logger.uploadArtifacts"]
+        }
+    }
+}
